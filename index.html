@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="شاليه الرمال - مكان مثالي للاستجمام والعائلة في قلب الطبيعة مع مسبح وملاعب ومرافق ممتازة">
+  <meta name="keywords" content="شاليه, إيجار شاليه, عطلة, مسبح, ملعب, جلسة عربية, استجمام">
+  <title>شاليه الرمال | إيجار شاليه فاخر للعائلات</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #0f5836;
+      --secondary-color: #0d7e48;
+      --accent-color: #f8b400;
+      --light-color: #f5f5f5;
+      --dark-color: #333;
+      --text-color: #444;
+    }
+    
+    body {
+      font-family: 'Tajawal', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #c8e2c8;
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    
+    @font-face {
+      font-family: 'Tajawal';
+      src: url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      /* تم استبدال الخلفية بالصورة رقم 4 */
+      background: url('images/4.jpg') center/cover;
+      opacity: 0.2;
+      z-index: 0;
+    }
+    
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+      position: relative;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    header p {
+      font-size: 1.4em;
+      position: relative;
+      margin-top: 10px;
+    }
+    
+    .social-links {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      display: flex;
+      gap: 15px;
+      z-index: 1;
+    }
+    
+    .social-links a {
+      color: white;
+      font-size: 1.5em;
+      transition: transform 0.3s;
+    }
+    
+    .social-links a:hover {
+      transform: translateY(-3px);
+      color: var(--accent-color);
+    }
+    
+    section {
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    
+    h2 {
+      text-align: center;
+      color: var(--primary-color);
+      margin-bottom: 30px;
+      font-size: 2.2em;
+      position: relative;
+    }
+    
+    h2::after {
+      content: "";
+      display: block;
+      width: 100px;
+      height: 4px;
+      background: var(--accent-color);
+      margin: 15px auto;
+      border-radius: 2px;
+    }
+    
+    .feature-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    
+    .feature {
+      background-color: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      font-size: 1.1em;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    
+    .feature i {
+      color: var(--secondary-color);
+      font-size: 1.5em;
+    }
+    
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 100px;
+    }
+    
+    .gallery-item {
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      aspect-ratio: 4/3;
+    }
+    
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit:hide;
+      transition: transform 0.5s;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 10px;
+      text-align: center;
+      transform: translateY(100%);
+      transition: transform 0.3s;
+    }
+    
+    .gallery-item:hover .gallery-caption {
+      transform: translateY(0);
+    }
+    
+    .booking-form {
+      background: white;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    
+    .form-group input, 
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1em;
+    }
+    
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    
+    .button {
+      display: inline-block;
+      padding: 14px 30px;
+      background-color: var(--secondary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1.1em;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.3s;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+    
+    .button:hover {
+      background-color: var(--primary-color);
+      transform: translateY(-3px);
+    }
+    
+    .button-block {
+      display: block;
+      width: 100%;
+    }
+    
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin: 30px 0;
+    }
+    
+    .contact-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      min-width: 200px;
+      transition: transform 0.3s;
+    }
+    
+    .contact-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .contact-card i {
+      font-size: 2em;
+      color: var(--secondary-color);
+      margin-bottom: 10px;
+    }
+    
+    .testimonials {
+      background: #f9f9f9;
+      padding: 50px 20px;
+    }
+    
+    .testimonial-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .testimonial {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+    
+    .testimonial-author {
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+    
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .faq-item {
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .faq-question {
+      padding: 15px;
+      background: #f5f5f5;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .faq-answer {
+      padding: 15px;
+      background: white;
+      display: none;
+    }
+    
+    .faq-question i {
+      transition: transform 0.3s;
+    }
+    
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+    
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+    
+    .map-container {
+      height: 400px;
+      margin: 30px 0;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    footer {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: right;
+    }
+    
+    .footer-column h3 {
+      color: var(--accent-color);
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-column h3::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 50px;
+      height: 2px;
+      background: var(--accent-color);
+    }
+    
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: #ddd;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-links a:hover {
+      color: var(--accent-color);
+    }
+    
+    .copyright {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #444;
+    }
+    
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2em;
+      }
+      
+      header p {
+        font-size: 1.2em;
+      }
+      
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      
+      .feature-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="social-links">
+      <a href="https://web.facebook.com/Sandchalet/?locale=ar_AR&_rdc=1&_rdr" aria-label="فيسبوك"><i class="fab fa-facebook"></i></a>
+      <a href= " https://api.whatsapp.com/send?phone=962796556645&text&context=AfeNH5ZrYAD1o6ELr9lrRjTex-5K41N5917-6xClzu0MD-FtILHKuCyMcLrJ3FryyriLWg5ybVF6-Fu0VIyQqiQKyrSp5LxCQfI2eMDSTnwKo52suADTC5kqucUd7hCl9XvmIGZZn0Y1IhRh1YqRMCVmRw&source&app=facebook " aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <h1>شاليه الرمال</h1>
+    <p>مرحبًا بكم في شاليه الرمال  وجهتكم المثالية للاسترخاء والاستجمام.
+استمتعوا بأجواء هادئة، تصميم عصري، ومساحات مجهزة بعناية لتمنحكم تجربة لا تُنسى، سواء كنتم تبحثون عن عطلة عائلية أو وقت ممتع مع الأصدقاء.</p>
+  </header>
+
+  <section>
+    <h2>مرافق الشاليه</h2>
+    <div class="feature-container">
+      <div class="feature">
+        <i class="fas fa-swimming-pool"></i>
+        <span>مسبح كبير 13×6 ومدفأ + مسبح أطفال</span>
+      </div>
+      <div class="feature">
+        <i class="fas fa-futbol"></i>
+        <span>ملعب قدم سداسي، عشب أصلي</span>
+      </div>
+      <div class="feature">
+        <i class="fas fa-bed"></i>
+        <span>غرفتين بانوراما وصالة كبار، جميع الغرف مكيفة</span>
+      </div>
+      <div class="feature">
+        <i class="fas fa-couch"></i>
+        <span>صالة جلوس عائلية مجهزة</span>
+      </div>
+      <div class="feature">
+        <i class="fas fa-tv"></i>
+        <span>شاشة كبيرة</span>
+      </div>
+      <div class="feature">
+        <i class="fas fa-utensils"></i>
+        <span>مطبخ مجهز بالكامل</span>
+      </div>
+      <div class="feature">
+        <i class="fas fa-music"></i>
+        <span>DJ</span>
+      </div>
+      <div class="feature">
+        <i class="fas fa-wifi"></i>
+        <span>Wi-Fi</span>
+      </div>
+      <div class="feature">
+        <i class="fas fa-bath"></i>
+        <span>حمامات داخلية 2 وخارجية 2</span>
+      </div>
+      <div class="feature">
+        <i class="fas fa-fire"></i>
+        <span>باربكيو + زرب</span>
+      </div>
+      <div class="feature">
+        <i class="fas fa-shower"></i>
+        <span>شورات خارجية 2</span>
+      </div>
+      <div class="feature">
+        <i class="fas fa-chair"></i>
+        <span>جلسات خارجية 3</span>
+      </div>
+      <div class="feature">
+        <i class="fas fa-umbrella-beach"></i>
+        <span>كراسي تشميس 6</span>
+      </div>
+      <div class="feature">
+        <i class="fas fa-spray-can"></i>
+        <span>معقم 100%</span>
+      </div>
+      <div class="feature">
+        <i class="fas fa-water"></i>
+        <span>شلالات ونوافير</span>
+      </div>
+      <div class="feature">
+        <i class="fas fa-table-tennis-paddle-ball"></i>
+        <span>طائرة، تنس طاولة، وبلياردو، بيبي فوت</span>
+      </div>
+      <div class="feature">
+        <i class="fas fa-child-reaching"></i>
+        <span>ألعاب أطفال، ومنطقة رمليّة</span>
+      </div>
+      <div class="feature">
+        <i class="fas fa-broom"></i>
+        <span>النظافة 100%</span>
+      </div>
+      <div class="feature">
+        <i class="fas fa-plus-circle"></i>
+        <span>والعديد من الإضافات</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+     
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="  images/1.jpg " alt="المسبح">
+       </div>
+
+      <div class="gallery-item">
+        <img src=" images/2.jpg " alt="الملعب">
+       </div>
+
+      <div class="gallery-item">
+        <img src=" images/3.jpg" alt="غرفة النوم">
+       </div>
+
+      <div class="gallery-item">
+        <img src=" images/4.jpg" alt="الصالة">
+       </div>
+
+      <div class="gallery-item">
+        <img src="  images/5.jpg " alt="المطبخ">
+       </div>
+
+      <div class="gallery-item">
+        <img src=" images/6.jpg" alt="الجلسة العربية">
+       </div>
+     
+    <div class="gallery-item">
+        <img src=" images/7.jpg " alt="غرفة الالعاب ">
+       </div>
+     
+
+    <div class="gallery-item">
+        <img src=" images/8.jpg " alt="المطبخ">
+       </div>
+      
+   <div class="gallery-item">
+        <img src=" images/9.jpg " alt="المطبخ">
+       </div>
+    
+        <div class="gallery-item">
+        <img src="images/10.jpg " alt="المطبخ">
+       </div>
+
+    <div class="gallery-item">
+        <img src="images/11.jpg " alt="المطبخ">
+       </div>
+
+    <div class="gallery-item">
+        <img src="images/12.jpg " alt="المطبخ">
+       </div>
+
+    <div class="gallery-item">
+        <img src=" images/13.jpg" alt="المطبخ">
+       </div>
+
+           <div class="gallery-item">
+        <img src=" images/14.jpg" alt="المطبخ">
+       </div>
+
+       
+
+
+
+  </section>
+
+  <section class="testimonials">
+    <h2>آراء العملاء</h2>
+    <div class="testimonial-container">
+      <div class="testimonial">
+        <div class="testimonial-text">
+          "تجربة رائعة في شاليه الرمال ، المكان نظيف وهادئ والخدمة ممتازة. نوصي به لكل العائلات."
+        </div>
+        <div class="testimonial-author">- أحمد السعد</div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-text">
+          "أفضل شاليه زرناه من حيث النظافة والراحة، المسبح كبير والملعب ممتاز للأطفال."
+        </div>
+        <div class="testimonial-author">- سارة محمد</div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-text">
+          "المسبح كان  أجمل ما في الشاليه، المكان هادئ ومناسب للاسترخاء بعيداً عن ضوضاء المدينة."
+        </div>
+        <div class="testimonial-author">- خالد الرشيد</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>موقع الشاليه</h2>
+    <div class="map-container">
+      <iframe src=" https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3376.1899484709825!2d35.98911532398591!3d32.19911197257999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151b7dea4d6c2717%3A0x59ede7483f4357fc!2sSand%20chalet!5e0!3m2!1sar!2sjo!4v1749056688876!5m2!1sar!2sjo"    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <section>
+    <h2>الأسئلة الشائعة</h2>
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>ما هي أوقات الحجز والمغادرة؟</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>يتم ترتيب أوقات الحجز  حسب التوفر.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>هل يسمح بدخول الحيوانات الأليفة؟</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>يسمح ولكن يجب تحمل مسؤليته في حال تم تشويه او تخريب ممتلكات الشاليه</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>ما هي وسائل الدفع المتاحة؟</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>نقبل الدفع نقداً أو عن طريق  الدفع الإلكتروني (محافظ الكترونية)</p>
+        </div>
+      </div>
+       
+    </div>
+  </section>
+
+  <section>
+    <h2>للحجز والاستفسار </h2>
+     
+    
+    <div class="contact-info">
+      <div class="contact-card">
+        <i class="fas fa-phone"></i>
+        <h3>اتصل بنا</h3>
+        <p>  Anas Younis 07 9655 6645</p>
+      </div>
+       
+      <div class="contact-card">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>العنوان</h3>
+        <p>طريق جرش، طواحين العدوان </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>عن الشاليه</h3>
+        <p>شاليه الرمال يتميز بتصميمه الذي يركز على الراحة، الخصوصية، والهدوء، ويُعد خيارًا مثاليًا لقضاء العطلات أو إجازات نهاية الأسبوع مع العائلة أو الأصدقاء.</p>
+      </div>
+       
+      <div class="footer-column">
+        <h3>اتصل بنا</h3>
+        <ul class="footer-links">
+          <li><i class="fas fa-phone"></i> Anas Younis 07 9655 6645  </li>
+          <li><i class="fas fa-map-marker-alt"></i> طريق جرش، طواحين العدوان </li>
+        </ul>
+      </div>
+    </div>
+    <div class="social-links" style="justify-content:center; position:static; margin:20px 0;">
+      <a href="https://web.facebook.com/Sandchalet/?locale=ar_AR&_rdc=1&_rdr" aria-label="فيسبوك"><i class="fab fa-facebook"></i></a>
+      <a href="   https://api.whatsapp.com/send?phone=962796556645&text&context=AfeNH5ZrYAD1o6ELr9lrRjTex-5K41N5917-6xClzu0MD-FtILHKuCyMcLrJ3FryyriLWg5ybVF6-Fu0VIyQqiQKyrSp5LxCQfI2eMDSTnwKo52suADTC5kqucUd7hCl9XvmIGZZn0Y1IhRh1YqRMCVmRw&source&app=facebook  " aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2025 شاليه الرمال. جميع الحقوق محفوظة.</p>
+        <p>  <a href="<!-- Your Name or Company Link -->" style="color: var(--accent-color); text-decoration: none;"> </a></p>
+    </div>
+    </footer>
+    <script>
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+            item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ar">    
+    
+</html>
